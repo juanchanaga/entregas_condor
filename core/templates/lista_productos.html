@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventario</title>
+</head>
+<body>
+    <h1>Lista de Productos (Inventario)</h1>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th>
+            <th>Producto</th>
+            <th>Proveedor</th>
+            <th>Stock Disponible</th>
+            <th>Stock en Tránsito</th>
+        </tr>
+
+        {% for p in productos %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.nombre }}</td>
+            <td>{{ p.proveedor.nombre }}</td>
+            <td>{{ p.stock_disponible }}</td>
+            <td>{{ p.stock_en_transito }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="{% url 'home' %}">Volver al Home</a>
+</body>
+</html>

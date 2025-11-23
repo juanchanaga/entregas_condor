@@ -1,0 +1,143 @@
+[
+  {
+    "model": "core.cliente",
+    "pk": 1,
+    "fields": {
+      "nombre": "Cliente Demo",
+      "email": "demo@correo.com",
+      "contraseña": "1234",
+      "direccion": "Calle Falsa 123"
+    }
+  },
+
+  {
+    "model": "core.proveedor",
+    "pk": 1,
+    "fields": {
+      "nombre": "Proveedor A",
+      "telefono": "3001111111",
+      "contacto": "Carlos A"
+    }
+  },
+  {
+    "model": "core.proveedor",
+    "pk": 2,
+    "fields": {
+      "nombre": "Proveedor B",
+      "telefono": "3002222222",
+      "contacto": "Ana B"
+    }
+  },
+  {
+    "model": "core.proveedor",
+    "pk": 3,
+    "fields": {
+      "nombre": "Proveedor C",
+      "telefono": "3003333333",
+      "contacto": "Luis C"
+    }
+  },
+
+  {
+    "model": "core.producto",
+    "pk": 1,
+    "fields": {
+      "proveedor": 1,
+      "nombre": "Laptop Lenovo",
+      "stock_disponible": 15,
+      "stock_en_transito": 5
+    }
+  },
+  {
+    "model": "core.producto",
+    "pk": 2,
+    "fields": {
+      "proveedor": 1,
+      "nombre": "Mouse inalámbrico",
+      "stock_disponible": 30,
+      "stock_en_transito": 10
+    }
+  },
+  {
+    "model": "core.producto",
+    "pk": 3,
+    "fields": {
+      "proveedor": 1,
+      "nombre": "Teclado Mecánico RGB",
+      "stock_disponible": 20,
+      "stock_en_transito": 5
+    }
+  },
+
+  {
+    "model": "core.producto",
+    "pk": 4,
+    "fields": {
+      "proveedor": 2,
+      "nombre": "Monitor 24 pulgadas",
+      "stock_disponible": 10,
+      "stock_en_transito": 4
+    }
+  },
+  {
+    "model": "core.producto",
+    "pk": 5,
+    "fields": {
+      "proveedor": 2,
+      "nombre": "Audífonos Bluetooth",
+      "stock_disponible": 50,
+      "stock_en_transito": 10
+    }
+  },
+  {
+    "model": "core.producto",
+    "pk": 6,
+    "fields": {
+      "proveedor": 2,
+      "nombre": "Cámara Web HD",
+      "stock_disponible": 12,
+      "stock_en_transito": 3
+    }
+  },
+
+  {
+    "model": "core.producto",
+    "pk": 7,
+    "fields": {
+      "proveedor": 3,
+      "nombre": "Disco SSD 500GB",
+      "stock_disponible": 18,
+      "stock_en_transito": 6
+    }
+  },
+  {
+    "model": "core.producto",
+    "pk": 8,
+    "fields": {
+      "proveedor": 3,
+      "nombre": "Memoria RAM 8GB",
+      "stock_disponible": 25,
+      "stock_en_transito": 8
+    }
+  },
+  {
+    "model": "core.producto",
+    "pk": 9,
+    "fields": {
+      "proveedor": 3,
+      "nombre": "Fuente de Poder 600W",
+      "stock_disponible": 10,
+      "stock_en_transito": 2
+    }
+  },
+  {
+    "model": "core.producto",
+    "pk": 10,
+    "fields": {
+      "proveedor": 3,
+      "nombre": "Tarjeta de video GTX",
+      "stock_disponible": 6,
+      "stock_en_transito": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movimiento de Inventario</title>
+</head>
+<body>
+    <h1>Movimiento de Inventario</h1>
+
+    {% if producto %}
+        <h3>Movimiento realizado</h3>
+        <p>Producto: {{ producto.nombre }}</p>
+        <p>Stock disponible: {{ producto.stock_disponible }}</p>
+
+        <br>
+        <a href="{% url 'movimiento_inventario' %}">Realizar otro movimiento</a>
+
+    {% else %}
+        <form method="POST">
+            {% csrf_token %}
+            <label>Producto:</label>
+            <select name="producto">
+                {% for p in productos %}
+                    <option value="{{ p.id }}">{{ p.nombre }} (Stock: {{ p.stock_disponible }})</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+            <label>Cantidad:</label>
+            <input type="number" name="cantidad" min="1" required>
+            <br><br>
+
+            <label>Tipo de movimiento:</label>
+            <select name="tipo">
+                <option value="entrada">Entrada</option>
+                <option value="salida">Salida</option>
+            </select>
+            <br><br>
+
+            <button type="submit">Procesar</button>
+        </form>
+    {% endif %}
+
+    <br>
+    <a href="{% url 'home' %}">Volver al Home</a>
+
+</body>
+</html>

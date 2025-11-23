@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmar Pago</title>
+</head>
+<body>
+    <h1>Confirmar Pago</h1>
+
+    {% if pago %}
+        <h3>Pago procesado correctamente</h3>
+        <p>ID Pedido: {{ pago.pedido.id }}</p>
+        <p>Método: {{ pago.metodo_pago }}</p>
+        <p>Monto: {{ pago.monto }}</p>
+        <p>Estado: {{ pago.estado_pago }}</p>
+
+        <br>
+        <a href="{% url 'registrar_pedido' %}">Registrar otro pedido</a>
+    {% else %}
+        <form method="POST">
+            {% csrf_token %}
+            <label>ID Pedido:</label>
+            <input type="number" name="pedido" required>
+            <br><br>
+
+            <label>Método de pago:</label>
+            <select name="metodo">
+                <option value="Tarjeta">Tarjeta</option>
+                <option value="PSE">PSE</option>
+                <option value="Efectivo">Efectivo</option>
+            </select>
+            <br><br>
+
+            <label>Monto:</label>
+            <input type="number" step="0.01" name="monto" required>
+            <br><br>
+
+            <button type="submit">Confirmar Pago</button>
+        </form>
+    {% endif %}
+
+    <br>
+    <a href="{% url 'home' %}">Volver al Home</a>
+
+</body>
+</html>
